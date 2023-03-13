@@ -5,7 +5,7 @@
 {% block content %}
 
 
-<div class="login_register_form">
+<div class="login_register_form" style="left: 40%;">
     <h1>Registration Form</h1>
     
 <br>
@@ -20,14 +20,15 @@
         <input type="password" name="confirm_password" class="form_input" placeholder="Confirm Password" required>
         </p>
         <br>
-        <button type="submit" class="btn btn-outline-success btn-sm" >Register</button>
+        {% if error %}
+        <p class="error" >{{ error }}</p>
+    {% endif %}
+        <button type="submit" class="login_btn" >Register</button>
     </form>
 
-    {% if error %}
-        <p class="error">{{ error }}</p>
-    {% endif %}
+   
     <br>
-    <p>Already have an account? <a href="/login">Login here</a></p>
+    <p style="color: #FFF6C3;">Already have an account? <a href="/login">Login here</a></p>
 
 </div>
 {% endblock %}

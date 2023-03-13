@@ -1,12 +1,20 @@
+
 #navtitle {
+    font-family: 'Potta One', cursive;
+    font-size: 45px;
+    color: #FFE15D;
     position: absolute;
-    left: 37%;
+    left: 33%;
 }
 
 #sound {
+    border-style: none;
     position: absolute;
     bottom: 1%;
     left: 1%;
+}
+.navbar {
+    box-shadow: 0 3px 10px #FFF6C3;
 }
 
 #logo {
@@ -14,7 +22,18 @@
     left: 15px;
 }
 
+.login_register_form h1 {
+    font-family: 'Signika Negative', sans-serif;
+    position: relative;
+    bottom:33%;
+
+}
+
 .login_register_form {
+    font-family: 'Signika Negative', sans-serif;
+
+    background-color :transparent;
+    color: #FFE15D;
     border-radius: 12px;
     width : 20%;
     display: grid;
@@ -24,8 +43,76 @@
     left: 38%;
 }
 
+.login_register_form a {
+    color : #FFE15D;
+
+}
+
+.inventory h1{
+    font-family: 'Signika Negative', sans-serif;
+    text-decoration: underline;
+    text-shadow: 0 3px 10px #FFF6C3;
+    bottom:130%;
+}
+
+.options h1{
+    font-family: 'Signika Negative', sans-serif;
+    position: relative;
+    top: 20%;
+}
+
+.inventory_table {
+    position: relative;
+    right : 5%;
+    bottom : 7%; 
+}
+
+
+.inventory, .options {
+    background-color: #FFE15D;
+    color: #850000;
+    width : 35%;
+    left:32%;
+}
+
+#add_btn {
+    font-family: 'Signika Negative', sans-serif;
+    background-color: #CD0404;
+    color :#FFE15D ;
+}
+
+#add_btn:hover{
+    box-shadow: 0 5px 20px #DC0000;
+}
+
+.login_btn {
+    font-family: 'Signika Negative', sans-serif;
+    width: 30%;
+    border-radius: 30px;
+    border: 1px solid #850000;
+    background-color: #FFE15D;
+    color :#850000 ;
+    box-shadow: 0 0 10px rbga(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.6;
+    transition-duration: 0.6 ;
+    -webkit-transition-property: box-shadow,transform;
+    transition-property: box-shadow,transform;
+}
+
+.login_btn:hover{ 
+    box-shadow: 0 5px 20px #FFF6C3;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: inset;
+    
+}
 
 .form_input {
+    font-family: 'Signika Negative', sans-serif;
+    text-align: center;
+    color: #850000;
+    border-radius: 30px;
+    background-color: #FFF6C3;
     border: none;
     border-bottom: 1px solid #000000;
 }
@@ -38,7 +125,10 @@
     
 }
 
-.logout{
+#logout{
+    font-family: 'Signika Negative', sans-serif;
+    width: 75px;
+    text-align: center;
     text-decoration: none;
     opacity: 0.75;
     border-radius: 10px;
@@ -46,7 +136,7 @@
     top: 3%;
     right: 3%;
 }
-.logout:hover{
+#logout:hover{
     opacity: 1;
     border-radius: 20px;
 
@@ -58,7 +148,8 @@
     color: red;
 }
 
-.options {
-    border-radius: 5px;
-    border-style: inset; 
+.error {
+    color: #3d0404;
+    font-weight: 500;
+    text-shadow: 0 3px 10px #FFF6C3;
 }

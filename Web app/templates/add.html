@@ -5,7 +5,7 @@
 {% block content %}
 
 
-<div class="login_register_form">
+<div class="login_register_form options">
     <h1>Add Item</h1>
     <br>
     {% if error %}
@@ -14,7 +14,7 @@
     <form method="post" action="/add">
        
        
-        <select class="options" name="name">
+        <select class="form_input" name="name">
             <option value="">Select a book</option>
                 {% for l in lis %}
                 <option value="{{l[0]}}">{{l[0].capitalize()}}</option>
@@ -31,7 +31,7 @@
         <input type="number" class="form_input" min="1" max="10" name="quantity" placeholder="1" autocomplete="off" required>
     </p>
     <br>
-        <button type="submit" class="btn btn-outline-success btn-sm">Add Item</button>
+        <button type="submit" class="login_btn" id="add_btn">Add Item</button>
     </form>
 
     <br>
