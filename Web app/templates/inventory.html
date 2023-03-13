@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory{% endblock %}
+
+{% block content %}
+
+    <div class="login_register_form">
+    <h1>Your Inventory</h1>
+    <br>
+    <table>
+        <thead>
+            <tr class="table_row">
+                <th>Comic</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+
+ 
+        </thead>
+
+        <tbody>
+            {% for item in items %}
+            <tr>
+         
+                    <td>{{ item[0].capitalize() }}</td>
+                    <td>{{ item[1].capitalize() }}</td>
+
+                    
+                    <td>
+                        <a href="/remove/{{item[3]}}" class="remove"><button class="btn btn-outline-danger btn-sm" >X</button></a>
+                    </td>
+                        
+                </tr>
+                
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/add"><button class="btn btn-success btn-sm">Add Item</button></a>
+    <br><br>
+    
+</div>
+
+<a href="/logout" class="logout">Logout</a>
+{% endblock %}

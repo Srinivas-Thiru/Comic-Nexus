@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+
+{% block content %}
+    
+ 
+
+
+    <div class="login_register_form">
+        <h1>Login Form</h1>
+        <br>
+        <form method="post">
+            <div class="inp_and_btn">
+            <p>
+            <input type="text" name="username" class="form_input" placeholder="Username"  id="input" autocomplete="off"  required>
+            </p>
+            <p>
+            <input type="password" name="password" class="form_input" placeholder="Password" autocomplete="off" required>
+            </p>   
+            <br>
+            <p>
+            <button type="submit" class="btn btn-outline-success btn-sm login_btn">Login</button>
+        </p>
+        </form>
+    {% if error %}
+        {{error}}
+    {% endif %}
+    <p>Don't have an account? <a href="/register">Register</a></p>
+</div>
+    <!--<p>Login as admin? <a href="/admin">Admin Login</a></p>-->
+
+</div>
+{% endblock %}

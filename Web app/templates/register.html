@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+
+<div class="login_register_form">
+    <h1>Registration Form</h1>
+    
+<br>
+    <form method="post" action="/register">
+        <p>
+        <input type="text" name="username" autocomplete="off" class="form_input" placeholder="Username" required>
+        </p>
+        <p>
+        <input type="password" name="password" autocomplete="off" class="form_input" placeholder="Password" required>
+        </p>
+        <p>
+        <input type="password" name="confirm_password" class="form_input" placeholder="Confirm Password" required>
+        </p>
+        <br>
+        <button type="submit" class="btn btn-outline-success btn-sm" >Register</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <br>
+    <p>Already have an account? <a href="/login">Login here</a></p>
+
+</div>
+{% endblock %}

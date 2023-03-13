@@ -1,0 +1,64 @@
+#navtitle {
+    position: absolute;
+    left: 37%;
+}
+
+#sound {
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+}
+
+#logo {
+    position: relative;
+    left: 15px;
+}
+
+.login_register_form {
+    border-radius: 12px;
+    width : 20%;
+    display: grid;
+    position: absolute;
+    text-align: center;
+    top : 30%;
+    left: 38%;
+}
+
+
+.form_input {
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.table_row {
+
+    position: relative;
+    bottom: 10px;
+
+    
+}
+
+.logout{
+    text-decoration: none;
+    opacity: 0.75;
+    border-radius: 10px;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+.logout:hover{
+    opacity: 1;
+    border-radius: 20px;
+
+
+}
+
+.remove {
+    text-decoration: none;
+    color: red;
+}
+
+.options {
+    border-radius: 5px;
+    border-style: inset; 
+}

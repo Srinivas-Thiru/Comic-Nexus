@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}DATABASE{% endblock %}
+
+{% block content %}
+    <h1>DATABASE</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name in names %}
+                <tr>
+                    <td>{{ name[0].capitalize() }}</td>                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br><br>
+    <a href="/logout">Logout</a>
+    
+{% endblock %}
