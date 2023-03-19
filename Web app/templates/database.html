@@ -3,23 +3,44 @@
 {% block title %}DATABASE{% endblock %}
 
 {% block content %}
+
+
+
+
+<div class="login_register_form inventory" >
     <h1>DATABASE</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Username</th>
+
+    <table >
+        <thead style="position: relative; bottom:20%; font-size : 23px;">
+            <tr >
+                <th style=" padding : 0 10px;">Username</th>
+                <th style="padding:0 10px;">Collections</th>
             </tr>
         </thead>
+
         <tbody>
-            {% for name in names %}
-                <tr>
-                    <td>{{ name[0].capitalize() }}</td>                    
-                </tr>
+            {% for key in admin_dict %}
+            <tr>
+                <td>{{key[0].capitalize()}}</td>
+                
+                <td>{% for i in admin_dict[key] %}
+                    {% set tempList = admin_dict[key]  %}
+                    {% if tempList.index(i) == tempList|length-1 %}
+                    {{i.capitalize() + '.'}}
+
+                    {% else %}    
+                    {{i.capitalize() + ','}}
+
+                    {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
     <br>
     <br><br>
-    <a href="/logout">Logout</a>
-    
+</div>
+<a href="/logout" id="logout" class="login_btn">Logout</a>
+
 {% endblock %}

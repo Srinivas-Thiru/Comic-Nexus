@@ -118,9 +118,9 @@
 }
 
 .table_row {
-
+    font-size : 21px;
     position: relative;
-    bottom: 10px;
+    bottom: 20px;
 
     
 }
@@ -149,7 +149,28 @@
 }
 
 .error {
-    color: #3d0404;
+    color: #eff300;
     font-weight: 500;
     text-shadow: 0 3px 10px #FFF6C3;
+}
+
+#back_btn{
+    rotate: 115deg;
+    font-size: 50px ;
+    position: absolute;
+    top:-10px;
+    left: 15px;
+    text-decoration: none; 
+    color : #850000;
+    -webkit-transition-duration: 0.6;
+    transition-duration: 0.6 ;
+    -webkit-transition-property: text-shadow,transform;
+    transition-property: text-shadow,transform;
+}
+#back_btn:hover{
+
+    text-shadow: 0 5px 20px #DC0000;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    text-shadow: inset;
 }

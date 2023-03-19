@@ -45,29 +45,6 @@ class LoginRegister:
         else:
             return render_template("login.html")
         
-            
-    @app.route("/admin", methods=["GET","POST"])
-    def admin_login():    
-        if request.method == "POST":    
-            username = request.form["username"]
-            password = request.form["password"]
-            if not username or username != "admin" :
-                return render_template("admin.html", error = "Admin not found")
-            else :
-                if not password or password != "password":
-                    return render_template("admin.html", error = "Admin not found")
-                else:
-                    conn = sqlite3.connect("database.db")
-                    c = conn.cursor()
-                    c.execute("SELECT username FROM users;")
-                    usernames = c.fetchall()
-                    c.execute("SELECT name FROM inventory;")
-                    inventories = c.fetchall()
-                    conn.close()
-                    return render_template("database.html", names = usernames , inventories = inventories)
-        else :
-            return render_template("admin.html")
-        
 
     @app.route("/register", methods=["GET", "POST"])
     def register():
@@ -91,6 +68,47 @@ class LoginRegister:
         else:
             return render_template("register.html")
 
+class AdminLogin:
+    
+    @app.route("/admin", methods=["GET","POST"])
+    def admin_login():    
+        if request.method == "POST":    
+            username = request.form["username"]
+            password = request.form["password"]
+            if not username or username != "admin" :
+                return render_template("admin.html", error = "Admin not found")
+            else :
+                if not password or password != "password":
+                    return render_template("admin.html", error = "Admin not found")
+                else:
+                    conn = sqlite3.connect("database.db")
+                    c = conn.cursor()
+                    c.execute("SELECT username FROM users;")
+                    names_admin = c.fetchall()
+                    conn.close()
+                    print(names_admin)
+
+
+                    conn = sqlite3.connect("database.db")
+                    c = conn.cursor()
+                    c.execute("SELECT username,name FROM users INNER JOIN inventory ON users.id = inventory.user_id;")
+                    list_admin = c.fetchall()
+                    conn.close()
+                    print(list_admin)
+
+                    admin_dict = {}
+
+                    for name in names_admin:
+                        x = []
+                        for i in list_admin:        
+                            if name[0] in i:
+                                x.append(i[1])            
+                        admin_dict[name] = x
+                                
+                    print(admin_dict)
+                    return render_template("database.html", admin_dict = admin_dict)
+        else :
+            return render_template("admin.html")
 
 class Inventory:
 

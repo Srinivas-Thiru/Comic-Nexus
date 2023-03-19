@@ -3,16 +3,28 @@
 {% block title %}Admin Login{% endblock %}
 
 {% block content %}
+
+<div class="login_register_form" style="left: 40%;">
     <h1>Admin Login</h1>
-    {% if error %}
-        <p class="error">{{ error }}</p>
-    {% endif %}
+
     <form method="post">
-        <label>Username:</label>
-        <input type="text" name="username" autocomplete="off" required>
-        <label>Password:</label>
-        <input type="password" name="password" autocomplete="off" required>
-        <button type="submit">Login</button>
+        <div class="inp_and_btn">
+        <p>
+        <input type="text" name="username" class="form_input" placeholder="Username"  id="input" autocomplete="off"  required>
+        </p>
+        <p>
+        <input type="password" name="password" class="form_input" placeholder="Password" autocomplete="off" required>
+        </p>   
+
+        {% if error %} 
+            <p class="error">{{error}}</p>
+        {% endif %}
+        <p>
+        <button type="submit" class="login_btn">Login</button>
+    </p>
     </form>
-    <p>Not an admin? <a href="/login">Back</a></p>
+
+    <p style="color: #FFF6C3;">Not an admin? <a href="/login">Back</a></p>
+</div></div>
 {% endblock %}
+ 

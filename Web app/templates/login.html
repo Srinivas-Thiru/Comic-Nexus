@@ -19,17 +19,17 @@
             <p>
             <input type="password" name="password" class="form_input" placeholder="Password" autocomplete="off" required>
             </p>   
-            <br>
+  
+            {% if error %} 
+                <p class="error">{{error}}</p>
+            {% endif %}
             <p>
             <button type="submit" class="login_btn">Login</button>
         </p>
         </form>
-    {% if error %} 
-        <p class="error">{{error}}</p>
-    {% endif %}
     <p style="color: #FFF6C3;">Don't have an account? <a href="/register">Register</a></p>
 </div>
-    <!--<p>Login as admin? <a href="/admin">Admin Login</a></p>-->
+    <p style="color: #FFF6C3;"> Login as admin? <a href="/admin">Admin Login</a></p>
 
 </div>
 {% endblock %}
